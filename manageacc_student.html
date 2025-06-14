@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>Manage Account</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+    }
+
+    header {
+      background-color: #1976d2;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 600px;
+      background: white;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #1976d2;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+     textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+
+    button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #135ba1;
+    }
+   nav{
+background-color: beige;
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 5px;
+      justify-content: center;
+      display: flex;
+}
+
+  nav a {
+      margin-right: 15px;
+      color: wh;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+  nav :hover{
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Manage Account</h1>
+  </header>
+  <nav>
+    <a href="dashboardcomp.html">Homepage</a>
+  </nav>
+
+  <div class="container">
+    <h2>Update Your Account</h2>
+    <form>
+      <label for="full_name">Full Name</label>
+      <input type="text" id="full_name" value="{full name}" readonly>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" value="{email id}" readonly>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone"  value="{phone number}" readonly>
+
+      <label for="university">University</label>
+      <input type="text" id="university" value="{ university name}" readonly>
+
+      <label for="bio">Bio</label>
+      <textarea id="bio" name="bio" rows="4" readonly>{ student.bio }</textarea>
+
+      <label for="resume">Resume (PDF/DOC)</label>
+      <input type="file" id="resume" >
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+
+</body>
+</html>
