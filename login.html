@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="main_div">
+    <table class="main_table">
+        <tr>
+            <td id="website_description">
+                <img src="logo.png" width="300px">
+                <h1> Website name</h1>
+                <p>[Website name] is a dynamic platform designed to connect students, fresh graduates, and young professionals with meaningful internship opportunities across a wide range of industries. Whether you're exploring career paths, building your resume, or gaining hands-on experience, [Website name] bridges the gap between talent and opportunity.</p>
+            </td>
+            <td>
+                <form>
+                <table>
+                    <tr>
+                        <td id="login_options">
+                            <h1>Get Started</h1>
+                            <h3>Login as...</h3>
+                            <button class="user_type" type="button" onclick="Login('user')">User</button> 
+                            <p>or</p>
+                            <button class="user_type" type="button" onclick="Login('company')">Company</button>
+                            <p>Or click <a href="link to internship search">here</a> to stay logged out.</p>
+                        </td>
+                    </tr>
+                </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+<script  src="loginUI.js"></script>
+
+</body>
+</html>
