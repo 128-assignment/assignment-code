@@ -1,0 +1,167 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+/* Navigation Bar */
+header {
+  background-color: #0077cc;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Page Content */
+main {
+  padding: 30px;
+}
+
+h2 {
+  color: #0077cc;
+}
+
+/* Internship Cards */
+.internship-card, .application-card, .profile-card {
+  background-color: white;
+  border: 2px solid #0077cc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.internship-card h3, .application-card h3, .profile-card h3 {
+  margin-top: 0;
+  color: #0077cc;
+}
+
+/* Forms */
+form {
+  background-color: white;
+  border: 2px solid #0077cc;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #0077cc;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #0077cc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #005fa3;
+}
+
+/* Buttons */
+button, a.button {
+  display: inline-block;
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+}
+
+button:hover, a.button:hover {
+  background-color: #005fa3;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+table, th, td {
+  border: 1px solid #0077cc;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #0077cc;
+  color: white;
+}
+
+/* Logout link styling */
+.logout-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+/* Profile Page Specific Styling */
+.profile-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.profile-container form {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.profile-container form input,
+.profile-container form textarea,
+.profile-container form select {
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}

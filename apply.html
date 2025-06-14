@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apply for Internship</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+  <h1>Internship Management Portal</h1>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="internships.html">Internships</a>
+    <a href="my-applications.html">My Applications</a>
+    <a href="profile.html">My Profile</a>
+    <a href="logout.html">Logout</a>
+  </nav>
+  <hr>
+</header>
+
+  <form action="/submit-application" method="post" enctype="multipart/form-data">
+    <label>Full Name:</label>
+    <input type="text" name="fullname" required><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" required><br>
+
+    <label>Resume:</label>
+    <input type="file" name="resume" accept=".pdf,.doc,.docx" required><br>
+
+    <label>Cover Letter:</label>
+    <textarea name="coverletter"></textarea><br>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</body>
+</html>
