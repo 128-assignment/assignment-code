@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>Application Management</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="company.css">
+</head>
+<body>
+
+  <div>
+    <img src="logo2.png" class="logo">
+    <header>
+      Company Application Management
+    </header>
+   </div>
+    <nav>
+      <a href="dashboardcomp.html">Home</a>
+      <a href="createinternship.html">Create Internship</a>
+      <a href="minternship.html">Manage Internship</a>
+      <a href="vmapplication.html">Applications</a>
+      <a href="manageaccount.html">Account</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+ 
+
+  <div class="container mipContainer">
+    <h2>Submitted Applications</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Applicant Name</th>
+          <th>Email</th>
+          <th>Position</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Alice Johnson</td>
+          <td>alice@example.com</td>
+          <td>Frontend Developer</td>
+          <td>Pending</td>
+          <td class="actions">
+            <button class="view-btn">View</button>
+            <button class="approve-btn">Approve</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Bob Smith</td>
+          <td>bob@example.com</td>
+          <td>Backend Engineer</td>
+          <td>Reviewed</td>
+          <td class="actions">
+            <button class="view-btn">View</button>
+            <button class="approve-btn">Approve</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+        <!-- Add more application rows here -->
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
