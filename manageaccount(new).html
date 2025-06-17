@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Account</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="company.css">
+  
+</head>
+<body>
+
+  <div>
+    <img src="logo2.png" class="logo">
+    <header>
+      Manage Account
+    </header>
+  </div>
+    <nav>
+      <a href="dashboardcomp.html">Home</a>
+      <a href="createinternship.html">Create Internship</a>
+      <a href="minternship.html">Manage Internship</a>
+      <a href="vmapplication.html">Applications</a>
+      <a href="manageaccount.html">Account</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  
+
+  <div class="container">
+    <h2>Update Your Account</h2>
+    <form action="/submit-internship" method="POST">
+      <label >Full Name</label>
+      <input type="text" id="name" name="name" placeholder="John Doe">
+
+      <label >Email Address</label>
+      <input type="email" id="email" name="email" placeholder="john@example.com">
+
+      <label >Phone Number</label>
+      <input type="text" id="phonenum" name="phonenum" placeholder="+971 XX XXXXXXX"
+       pattern="^\+971 [0-9]{2} [0-9]{7}$" required>
+
+      <label>Bio</label>
+      <textarea id="bio" name="bio" placeholder="write something about your complany here"></textarea>
+
+
+      <label >New Password</label>
+      <input type="password" id="password" name="password" placeholder="••••••••">
+
+      <label >Confirm Password</label>
+      <input type="password" id="confirm" name="confirm" placeholder="••••••••">
+
+      <button onclick="showmessage()"> Save Changes</button>
+      <script>
+        function showmessage(){
+        window.alert("Changes saved");
+        }
+      </script>
+	
+    </form>
+  </div>
+
+</body>
+</html>
+
+
+
