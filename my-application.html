@@ -3,26 +3,110 @@
 <head>
   <title>My Applications</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .details-row {
+      display: none;
+      background-color: #f9f9f9;
+    }
+    .details-cell {
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
   <header>
-  <h1>Internship Management Portal</h1>
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="internships.html">Internships</a>
-    <a href="my-applications.html">My Applications</a>
-    <a href="profile.html">My Profile</a>
-    <a href="logout.html">Logout</a>
-  </nav>
-  <hr>
-</header>
+    <h1>Internship Management Portal</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="internships.html">Internships</a>
+      <a href="my-applications.html">My Applications</a>
+      <a href="profile.html">My Profile</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+    <hr>
+  </header>
 
-  <section>
-    <div class="application-card">
-      <h3>Web Developer Intern</h3>
-      <p>Status: Pending</p>
-      <p>Applied on: 2025-06-10</p>
-    </div>
-  </section>
+  <div class="container">
+    <h2>My Applications</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Program Title</th>
+          <th>Company</th>
+          <th>Department</th>
+          <th>Start Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Row 1 -->
+        <tr>
+          <td>1</td>
+          <td>Web Developer Internship</td>
+          <td>Tech Solutions</td>
+          <td>IT</td>
+          <td>2025-07-01</td>
+          <td><span class="status-badge status-active">Active</span></td>
+
+          <td>
+            <button class="view">View</button>
+            <button class="withdraw">Withdraw</button>
+          </td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="7" class="details-cell">
+            <strong>Company Description:</strong> Tech Solutions is a Dubai-based IT firm specializing in web application development and enterprise solutions.<br>
+            <strong>Duration:</strong> 3 Months<br>
+            <strong>Responsibilities:</strong> Assist in front-end and back-end development, website maintenance, and testing.
+          </td>
+        </tr>
+
+        <!-- Row 2 -->
+        <tr>
+          <td>2</td>
+          <td>Marketing Summer Internship</td>
+          <td>Bitmarket</td>
+          <td>Marketing</td>
+          <td>2025-06-20</td>
+          <td><span class="status-badge status-inactive">Inactive</span></td>
+
+          <td>
+            <button class="table-button view">View</button>
+            <button class="table-button withdraw">Withdraw</button>
+          </td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="7" class="details-cell">
+            <strong>Company Description:</strong> Bitmarket is a leading digital marketing agency in the UAE.<br>
+            <strong>Duration:</strong> 2 Months<br>
+            <strong>Responsibilities:</strong> Assist with marketing campaigns, social media management, and client reporting.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+<script>
+const viewButtons = document.querySelectorAll('.view');
+
+viewButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const detailsRow = button.closest('tr').nextElementSibling;
+    if (detailsRow.style.display === 'table-row') {
+      detailsRow.style.display = 'none';
+    } else {
+      detailsRow.style.display = 'table-row';
+    }
+  });
+});
+</script>
+
+
+
 </body>
 </html>

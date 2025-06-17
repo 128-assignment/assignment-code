@@ -10,7 +10,7 @@
   <nav>
     <a href="home.html">Home</a>
     <a href="internships.html">Internships</a>
-    <a href="my-applications.html">My Applications</a>
+    <a href="my-application.html">My Applications</a>
     <a href="profile.html">My Profile</a>
     <a href="logout.html">Logout</a>
   </nav>
@@ -34,12 +34,47 @@
 
   <section>
     <h2>Available Positions</h2>
-    <div class="internship-card">
+
+  <div class="internship-card">
+    <div class="internship-info">
       <h3>Web Developer Intern</h3>
-      <p>Company: Tech Solutions</p>
-      <p>Location: Dubai</p>
-      <a href="internship-details.html">View Details</a>
+      <p><strong>Company:</strong> Tech Solutions</p>
+      <p><strong>Type:</strong> Full-Time</p>
+      <p><strong>Deadline:</strong> 30 June 2025</p>
+      <div class="details">
+        <p><strong>Location:</strong> Dubai</p>
+        <p><strong>Duration:</strong> 3 Months</p>
+        <p><strong>Stipend:</strong> AED 2000/month</p>
+        <p><strong>Skills Required:</strong> HTML, CSS, JS</p>
+        <p><strong>Description:</strong> Work with our frontend team to develop and improve web applications.</p>
+      </div>
     </div>
+    <div class="card-actions">
+      <button class="button toggle-details">View Details</button>
+      <a href="apply.html" class="button">Apply</a>
+    </div>
+  </div>
+
   </section>
+
+  <script>
+  // Toggle details display
+  const toggleButtons = document.querySelectorAll('.toggle-details');
+
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const details = button.closest('.internship-card').querySelector('.details');
+      if (details.style.display === 'block') {
+        details.style.display = 'none';
+        button.textContent = 'View Details';
+      } else {
+        details.style.display = 'block';
+        button.textContent = 'Hide Details';
+      }
+    });
+  });
+</script>
+
+
 </body>
 </html>

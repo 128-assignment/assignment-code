@@ -6,42 +6,90 @@
 </head>
 <body>
   <header>
-  <h1>Internship Management Portal</h1>
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="internships.html">Internships</a>
-    <a href="my-applications.html">My Applications</a>
-    <a href="profile.html">My Profile</a>
-    <a href="logout.html">Logout</a>
-  </nav>
-  <hr>
-</header>
+    <h1>Internship Management Portal</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="internships.html">Internships</a>
+      <a href="my-application.html">My Applications</a>
+      <a href="profile.html">My Profile</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+    <hr>
+  </header>
 
-  <main>
   <div class="profile-container">
-    <form>
-      <label>Full Name:</label>
-      <input type="text" name="fullname" required>
+    <h2>User Profile</h2>
 
-      <label>Email:</label>
-      <input type="email" name="email" required>
+    <div class="profile-info" id="profile-info">
+      <p><strong>Name:</strong> <span id="display-name">Muhsina Fathima</span></p>
+      <p><strong>Email:</strong> <span id="display-email">muhsina@example.com</span></p>
+      <p><strong>Phone:</strong> <span id="display-phone">+971 50 123 4567</span></p>
+      <p><strong>Address:</strong> <span id="display-address">Dubai, UAE</span></p>
+    </div>
 
-      <label>Phone:</label>
-      <input type="text" name="phone">
+    <button id="edit-btn">Edit Profile</button>
 
-      <label>University:</label>
-      <input type="text" name="university">
+    <form id="edit-form" style="display:none;">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" value="Muhsina Fathima" required />
 
-      <label>Skills:</label>
-      <input type="text" name="skills">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" value="muhsina@example.com" required />
 
-      <label>Resume:</label>
-      <input type="file" name="resume" accept=".pdf,.doc,.docx">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" value="+971 50 123 4567" required />
 
-      <button type="submit">Update Profile</button>
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" value="Dubai, UAE" />
+
+      <div class="form-buttons">
+        <button type="submit">Save</button>
+        <button type="button" id="cancel-btn">Cancel</button>
+      </div>
     </form>
   </div>
-</main>
 
+  <script>
+    const editBtn = document.getElementById('edit-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const profileInfo = document.getElementById('profile-info');
+    const editForm = document.getElementById('edit-form');
+
+    // Show form on Edit button click, hide profile info
+    editBtn.addEventListener('click', () => {
+      profileInfo.style.display = 'none';
+      editForm.style.display = 'block';
+      editBtn.style.display = 'none';
+    });
+
+    // Cancel editing: hide form, show profile info
+    cancelBtn.addEventListener('click', () => {
+      editForm.style.display = 'none';
+      profileInfo.style.display = 'block';
+      editBtn.style.display = 'block';
+    });
+
+    // On form submit: update profile info and hide form
+    editForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Get form values
+      const name = editForm.name.value.trim();
+      const email = editForm.email.value.trim();
+      const phone = editForm.phone.value.trim();
+      const address = editForm.address.value.trim();
+
+      // Update display spans
+      document.getElementById('display-name').textContent = name;
+      document.getElementById('display-email').textContent = email;
+      document.getElementById('display-phone').textContent = phone;
+      document.getElementById('display-address').textContent = address;
+
+      // Hide form, show profile info & edit button
+      editForm.style.display = 'none';
+      profileInfo.style.display = 'block';
+      editBtn.style.display = 'block';
+    });
+  </script>
 </body>
 </html>

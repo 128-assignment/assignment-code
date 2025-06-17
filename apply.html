@@ -4,33 +4,62 @@
   <title>Apply for Internship</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <header>
-  <h1>Internship Management Portal</h1>
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="internships.html">Internships</a>
-    <a href="my-applications.html">My Applications</a>
-    <a href="profile.html">My Profile</a>
-    <a href="logout.html">Logout</a>
-  </nav>
-  <hr>
-</header>
+    <h1>Internship Management Portal</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="internships.html">Internships</a>
+      <a href="my-application.html">My Applications</a>
+      <a href="profile.html">My Profile</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+    <hr>
+  </header>
 
-  <form action="/submit-application" method="post" enctype="multipart/form-data">
-    <label>Full Name:</label>
-    <input type="text" name="fullname" required><br>
+  <section>
+    <h2>Apply for Internship</h2>
 
-    <label>Email:</label>
-    <input type="email" name="email" required><br>
+    <div class="profile-container">
+      <form id="applicationForm" class="apply-form">
+        <label>Full Name:</label>
+        <input type="text" name="fullname" required>
 
-    <label>Resume:</label>
-    <input type="file" name="resume" accept=".pdf,.doc,.docx" required><br>
+        <label>Email:</label>
+        <input type="email" name="email" required>
 
-    <label>Cover Letter:</label>
-    <textarea name="coverletter"></textarea><br>
+        <label>Phone:</label>
+        <input type="text" name="phone">
 
-    <button type="submit">Submit Application</button>
-  </form>
+        <label>University:</label>
+        <input type="text" name="university">
+
+        <label>Skills:</label>
+        <input type="text" name="skills">
+
+        <label>Resume:</label>
+        <input type="file" name="resume" accept=".pdf,.doc,.docx">
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="back-button-container">
+        <button onclick="window.location.href='internships.html'">Back</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('applicationForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Submission complete");
+      window.location.href = "my-application.html";
+    });
+  </script>
+
 </body>
 </html>
