@@ -35,8 +35,8 @@
       <input type="email" id="email" name="email" placeholder="john@example.com">
 
       <label >Phone Number</label>
-      <input type="text" id="phonenum" name="phonenum" placeholder="+971 XX XXXXXXX"  maxlength="14"
-       pattern="^[0-9]{9}$" required>
+      <input type="text" id="phonenum" name="phonenum" placeholder="+971 XXXXXXXXX"  maxlength="14"
+       required>
 
       <label>Bio</label>
       <textarea id="bio" name="bio" placeholder="write something about your complany here"></textarea>
@@ -49,35 +49,41 @@
       <input type="password" id="confirm" name="confirm" placeholder="••••••••">
 
       <button type="submit"> Save Changes</button>
-      <script>
-        function validateForm() {
-          const email = document.getElementById('email').value.trim();
-          const password = document.getElementById('password').value;
-          const confirm = document.getElementById('confirm').value;
+<script>
+  function validateForm() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirm = document.getElementById('confirm').value;
+    const phone = document.getElementById('phonenum').value.trim();
 
-          const emailregex = /^[a-zA-Z0-9._\-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
-          const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+    const emailregex = /^[a-zA-Z0-9._\-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+    const phoneRegex = /^\+971[0-9]{9}$/;
 
-          if (!emailregex.test(email)) {
-            alert("Invalid email format.");
-            return false;
-          }
+    if (!emailregex.test(email)) {
+      alert("Invalid email format.");
+      return false;
+    }
 
-          if (!passwordRegex.test(password)) {
-            alert("Password must be at least 8 characters long, include a letter, a number, and a special character.");
-            return false;
-          }
+    if (!passwordRegex.test(password)) {
+      alert("Password must be at least 8 characters long, include a letter, a number, and a special character.");
+      return false;
+    }
 
-          if (password !== confirm) {
-            alert("Passwords do not match.");
-            return false;
-          }
+    if (password !== confirm) {
+      alert("Passwords do not match.");
+      return false;
+    }
 
-          alert("Changes saved");
-          return true;
+    if (!phoneRegex.test(phone)) {
+      alert("Phone number must be in format: +971XXXXXXXXX (e.g. +971501234567)");
+      return false;
+    }
+
+    alert("Changes saved");
+    return true;
   }
-</script>
-	
+</script>	
     </form>
   </div>
 
