@@ -27,6 +27,7 @@
 
     <div class="internship-info" id="profile-info">
       <p><strong>Name:</strong> <span id="display-name">Muhsina Fathima</span></p>
+      <p><strong>User Name:</strong> <span id="display-username">Muhsina 06</span></p>
       <p><strong>Email:</strong> <span id="display-email">muhsina@example.com</span></p>
       <p><strong>Phone:</strong> <span id="display-phone">+971 50 123 4567</span></p>
       <p><strong>Address:</strong> <span id="display-address">Dubai, UAE</span></p>
@@ -34,22 +35,39 @@
 
     <button id="edit-btn">Edit Profile</button>
 
-    <form id="edit-form" style="display:none;">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" value="Muhsina Fathima" required />
+  <form id="edit-form" style="display:none;">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" value="Muhsina Fathima" required />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" value="muhsina@example.com" required />
+  <label for="username">User Name</label>
+  <input type="text" id="username" name="username" value="Muhsina 06" required />
 
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" value="+971 50 123 4567" required />
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" 
+         value="muhsina@example.com" required 
+         pattern="^[a-zA-Z0-9._\-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+         title="Please enter a valid email address" />
 
-      <label for="address">Address</label>
-      <input type="text" id="address" name="address" value="Dubai, UAE" />
+  <label>Phone:</label>
+  <input type="text" name="phone" required
+  pattern="^\+971 ?[0-9]{9}$"
+  maxlength="14"
+  title="Phone number must be in the format +971 1234567"
+  placeholder="+971 912345678">
 
-        <button type="submit">Save</button>
-        <button type="button" id="cancel-btn">Cancel</button>
-    </form>
+  <label for="address">Address</label>
+  <input type="text" id="address" name="address" value="Dubai, UAE" />
+
+  <label for="password">Password</label>
+  <input type="text" id="password" name="password" value="123456" required />
+
+  <label for="confirmpassword">Confirm Password</label>
+  <input type="text" id="confirmpassword" name="confirmpassword" value="123456" required />
+
+  <button type="submit">Save</button>
+  <button type="button" id="cancel-btn">Cancel</button>
+</form>
+
   </div>
 
   <script>

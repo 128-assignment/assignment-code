@@ -32,10 +32,16 @@
         <input type="text" name="fullname" required>
 
         <label>Email:</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" required 
+         pattern="^[a-zA-Z0-9._\-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+         title="Please enter a valid email address">
 
         <label>Phone:</label>
-        <input type="text" name="phone">
+        <input type="text" name="phone" required
+        pattern="^\+971 ?[0-9]{9}$"
+        maxlength="14"
+        title="Phone number must be in the format +971 1234567"
+        placeholder="+971 912345678">
 
         <label>University:</label>
         <input type="text" name="university">
@@ -46,7 +52,7 @@
         <label>Resume:</label>
         <input type="file" name="resume" accept=".pdf,.doc,.docx">
         
-        <button type="button" onclick="window.location.href='internships.html'">Back</button>
+                <button type="button" onclick="window.location.href='internships.html'">Back</button>
         <button type="submit">Submit</button>
 
       </form>
