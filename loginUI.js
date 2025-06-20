@@ -122,7 +122,7 @@ function validateForm(type) {
     const patterns = {
         username: /^[a-zA-Z0-9_]{3,20}$/,
         companyName: /^[a-zA-Z0-9\s&]{2,50}$/,
-        email: /^[^@]+@[^@]+\.[a-z]{2,}$/i,
+        email: /^[a-zA-Z0-9._\-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/,/i,
         phone: /^[0-9]{9}$/,
         password: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/
     };
