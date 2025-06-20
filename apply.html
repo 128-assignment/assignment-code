@@ -2,28 +2,32 @@
 <html>
 <head>
   <title>Apply for Internship</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="user.css">
 </head>
 
 <body>
 
+  <div>
+  <img src="logo2.png" class="logo">
   <header>
-    <h1>Internship Management Portal</h1>
+    Internship Management Portal
+  </header>
+  </div>
     <nav>
       <a href="home.html">Home</a>
       <a href="internships.html">Internships</a>
       <a href="my-application.html">My Applications</a>
       <a href="profile.html">My Profile</a>
-      <a href="logout.html">Logout</a>
+      <a href="login.html">Logout</a>
     </nav>
     <hr>
-  </header>
 
   <section>
     <h2>Apply for Internship</h2>
 
-    <div class="profile-container">
-      <form id="applicationForm" class="apply-form">
+    <div class="container">
+      <form id="applicationForm" >
         <label>Full Name:</label>
         <input type="text" name="fullname" required>
 
@@ -41,13 +45,13 @@
 
         <label>Resume:</label>
         <input type="file" name="resume" accept=".pdf,.doc,.docx">
-
+        
+        <button type="button" onclick="window.location.href='internships.html'">Back</button>
         <button type="submit">Submit</button>
+
       </form>
 
-      <div class="back-button-container">
-        <button onclick="window.location.href='internships.html'">Back</button>
-      </div>
+
     </div>
   </section>
 
