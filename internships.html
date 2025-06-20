@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Available Internships</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Internships</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="user.css">
 </head>
 <body>
+  <div>
+  <img src="logo2.png" class="logo">
   <header>
-  <h1>Internship Management Portal</h1>
+    Internship Management Portal
+  </header>
+  </div>
+  
   <nav>
     <a href="home.html">Home</a>
     <a href="internships.html">Internships</a>
     <a href="my-application.html">My Applications</a>
     <a href="profile.html">My Profile</a>
-    <a href="logout.html">Logout</a>
+    <a href="login.html">Logout</a>
   </nav>
-  <hr>
-</header>
 
   <section>
-    <input type="text" placeholder="Search by keyword...">
+    <div class="search">
+    <h1>Available Internships</h1>
+    <input type="text" placeholder="Search Internship...">
     <select>
       <option value="">Filter by Domain</option>
       <option value="IT">IT</option>
@@ -30,30 +36,37 @@
       <option value="Abu Dhabi">Abu Dhabi</option>
     </select>
     <button>Search</button>
-  </section>
+    </div><br>
 
-  <section>
-    <h2>Available Positions</h2>
+    
 
-  <div class="internship-card">
+<div class="internship-card">
+  <div class="top-row">
     <div class="internship-info">
       <h3>Web Developer Intern</h3>
       <p><strong>Company:</strong> Tech Solutions</p>
       <p><strong>Type:</strong> Full-Time</p>
       <p><strong>Deadline:</strong> 30 June 2025</p>
-      <div class="details">
-        <p><strong>Location:</strong> Dubai</p>
-        <p><strong>Duration:</strong> 3 Months</p>
-        <p><strong>Stipend:</strong> AED 2000/month</p>
-        <p><strong>Skills Required:</strong> HTML, CSS, JS</p>
-        <p><strong>Description:</strong> Work with our frontend team to develop and improve web applications.</p>
-      </div>
     </div>
+
     <div class="card-actions">
       <button class="button toggle-details">View Details</button>
       <a href="apply.html" class="button">Apply</a>
     </div>
   </div>
+
+  <div class="details">
+    <p><strong>Location:</strong> Dubai</p>
+    <p><strong>Duration:</strong> 3 Months</p>
+    <p><strong>Stipend:</strong> AED 2000/month</p>
+    <p><strong>Skills Required:</strong> HTML, CSS, JS</p>
+    <p><strong>Description:</strong> Work with our frontend team to develop and improve web applications.</p>
+  </div>
+</div>
+
+
+
+  
 
   </section>
 
