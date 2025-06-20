@@ -15,6 +15,14 @@ body {
     float: left;
 }
 
+.dashboardimg {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    border-radius: 10px;
+    display: block;
+}
+
 div {
     background-image: linear-gradient(to left,rebeccapurple, #1B0D31,  #1B0D31,  #1B0D31);
     color: white;
@@ -43,9 +51,8 @@ div {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  height:200px;
+  height:250px;
 }
-
 
 .card:hover {
     box-shadow: 0 8px 20px rgba(21,101,192,0.3);
