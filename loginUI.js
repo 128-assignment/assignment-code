@@ -94,7 +94,7 @@ function CreateAccount(type) {
     document.getElementById("login_options").innerHTML = `
         <div class="login_div acc_details">
             <h2>${title}</h2>
-            <form action="/register" method="POST">
+            <form action="/register" method="POST" onsubmit="return validateForm('${type}')">
                 ${fields}
 
                 <label>Enter Password</label><br>
@@ -113,3 +113,62 @@ function CreateAccount(type) {
         </div>
     `;
 }
+
+function validateForm(type) {
+    const errorEl = document.getElementById(`${type}_error`);
+    errorEl.textContent = "";
+
+    // Shared regex patterns
+    const patterns = {
+        username: /^[a-zA-Z0-9_]{3,20}$/,
+        companyName: /^[a-zA-Z0-9\s&]{2,50}$/,
+        email: /^[^@]+@[^@]+\.[a-z]{2,}$/i,
+        phone: /^[0-9]{9}$/,
+        password: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/
+    };
+
+    const values = {
+        email: document.querySelector("[name='email']").value.trim(),
+        password: document.querySelector("[name='password']").value,
+        confirmPassword: document.querySelector("[name='confirm_password']").value
+    };
+
+    // Type-specific fields
+    if (type === "user") {
+        values.username = document.querySelector("[name='username']").value.trim();
+
+        if (!patterns.username.test(values.username)) {
+            errorEl.textContent = "Username must be 3–20 characters: letters, numbers, or underscores.";
+            return false;
+        }
+    } else if (type === "company") {
+        values.companyName = document.querySelector("[name='companyName']").value.trim();
+        values.phone = document.querySelector("[name='companyNumber']").value.trim();
+
+        if (!patterns.companyName.test(values.companyName)) {
+            errorEl.textContent = "Company name must be 2–50 characters.";
+            return false;
+        }
+        if (!patterns.phone.test(values.phone)) {
+            errorEl.textContent = "Phone number must be 9 digits.";
+            return false;
+        }
+    }
+
+    // Shared validations
+    if (!patterns.email.test(values.email)) {
+        errorEl.textContent = "Invalid email format.";
+        return false;
+    }
+    if (!patterns.password.test(values.password)) {
+        errorEl.textContent = "Password must be at least 8 characters and include a letter, number, and special character.";
+        return false;
+    }
+    if (values.password !== values.confirmPassword) {
+        errorEl.textContent = "Passwords do not match.";
+        return false;
+    }
+
+    return true;
+}
+
