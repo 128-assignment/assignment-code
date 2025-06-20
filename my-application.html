@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>My Applications</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="user.css">
   <style>
     .details-row {
       display: none;
@@ -14,26 +15,30 @@
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Internship Management Portal</h1>
+  <div>
+    <img src="logo2.png" class="logo">
+    <header>
+      Internship Management Portal
+    </header>
+  </div>
     <nav>
       <a href="home.html">Home</a>
       <a href="internships.html">Internships</a>
-      <a href="my-applications.html">My Applications</a>
+      <a href="my-application.html">My Applications</a>
       <a href="profile.html">My Profile</a>
-      <a href="logout.html">Logout</a>
+      <a href="login.html">Logout</a>
     </nav>
     <hr>
-  </header>
+  
 
   <div class="container">
-    <h2>My Applications</h2>
+    <h1>My Applications</h1>
 
     <table>
       <thead>
         <tr>
-          <th>#</th>
           <th>Program Title</th>
           <th>Company</th>
           <th>Department</th>
@@ -45,16 +50,15 @@
       <tbody>
         <!-- Row 1 -->
         <tr>
-          <td>1</td>
           <td>Web Developer Internship</td>
           <td>Tech Solutions</td>
           <td>IT</td>
           <td>2025-07-01</td>
-          <td><span class="status-badge status-active">Active</span></td>
+          <td><span>Pending</span></td>
 
           <td>
             <button class="view">View</button>
-            <button class="withdraw">Withdraw</button>
+            <button>Withdraw</button>
           </td>
         </tr>
         <tr class="details-row">
@@ -67,16 +71,15 @@
 
         <!-- Row 2 -->
         <tr>
-          <td>2</td>
           <td>Marketing Summer Internship</td>
           <td>Bitmarket</td>
           <td>Marketing</td>
           <td>2025-06-20</td>
-          <td><span class="status-badge status-inactive">Inactive</span></td>
+          <td><span>Pending</span></td>
 
           <td>
-            <button class="table-button view">View</button>
-            <button class="table-button withdraw">Withdraw</button>
+            <button class="view">View</button>
+            <button>Withdraw</button>
           </td>
         </tr>
         <tr class="details-row">
