@@ -5,89 +5,71 @@
   <title>Manage Account</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="company.css">
-  
 </head>
 <body>
 
   <div>
     <img src="logo2.png" class="logo">
-    <header>
-      Manage Account
-    </header>
+    <header>Manage Account</header>
   </div>
-    <nav>
-      <a href="dashboardcomp.html">Home</a>
-      <a href="createinternship.html">Create Internship</a>
-      <a href="minternship.html">Manage Internship</a>
-      <a href="vmapplication.html">Applications</a>
-      <a href="manageaccount.html">Account</a>
-      <a href="logout.html">Logout</a>
-    </nav>
-  
+
+  <nav>
+    <a href="dashboardcomp.html">Home</a>
+    <a href="createinternship.html">Create Internship</a>
+    <a href="minternship.html">Manage Internship</a>
+    <a href="vmapplication.html">Applications</a>
+    <a href="manageaccount.html">Account</a>
+    <a href="logout.html">Logout</a>
+  </nav>
 
   <div class="container">
     <h2>Update Your Account</h2>
-    <form action="/submit-internship" method="POST"  onsubmit="return validateForm()">
-      <label >Full Name</label>
-      <input type="text" id="name" name="name" placeholder="John Doe">
+    <form action="/submit-internship" method="POST" onsubmit="return confirmSave()">
+      
+      <label>Full Name</label>
+      <input type="text" id="name" name="name" placeholder="John Doe" required>
 
-      <label >Email Address</label>
-      <input type="email" id="email" name="email" placeholder="john@example.com">
+      <label>Email Address</label>
+      <input type="email" id="email" name="email" placeholder="john@example.com"
+        pattern="^[a-zA-Z0-9._\-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+        title="Please enter a valid email (e.g. john@example.com)" required>
 
-      <label >Phone Number</label>
-      <input type="text" id="phonenum" name="phonenum" placeholder="+971 XXXXXXXXX"  maxlength="14"
-       required>
+      <label>Phone Number</label>
+      <input type="tel" id="phonenum" name="phonenum" placeholder="+971XXXXXXXXX" maxlength="13"
+        pattern="^\+971[0-9]{9}$"
+        title="Phone must be in format: +971XXXXXXXXX (e.g. +971501234567)" required>
 
       <label>Bio</label>
-      <textarea id="bio" name="bio" placeholder="write something about your complany here"></textarea>
+      <textarea id="bio" name="bio" placeholder="Write something about your company here"></textarea>
 
+      <label>New Password</label>
+      <input type="password" id="password" name="password" placeholder="••••••••"
+        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$"
+        title="Password must be at least 8 characters with a letter, number, and symbol." required>
 
-      <label >New Password</label>
-      <input type="password" id="password" name="password" placeholder="••••••••">
+      <label>Confirm Password</label>
+      <input type="password" id="confirm" name="confirm" placeholder="••••••••" required>
 
-      <label >Confirm Password</label>
-      <input type="password" id="confirm" name="confirm" placeholder="••••••••">
-
-      <button type="submit"> Save Changes</button>
-<script>
-  function validateForm() {
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-    const confirm = document.getElementById('confirm').value;
-    const phone = document.getElementById('phonenum').value.trim();
-
-    const emailregex = /^[a-zA-Z0-9._\-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
-    const phoneRegex = /^\+971[0-9]{9}$/;
-
-    if (!emailregex.test(email)) {
-      alert("Invalid email format.");
-      return false;
-    }
-
-    if (!passwordRegex.test(password)) {
-      alert("Password must be at least 8 characters long, include a letter, a number, and a special character.");
-      return false;
-    }
-
-    if (password !== confirm) {
-      alert("Passwords do not match.");
-      return false;
-    }
-
-    if (!phoneRegex.test(phone)) {
-      alert("Phone number must be in format: +971XXXXXXXXX (e.g. +971501234567)");
-      return false;
-    }
-
-    alert("Changes saved");
-    return true;
-  }
-</script>	
+      <button type="submit">Save Changes</button>
     </form>
   </div>
 
+  <script>
+    function confirmSave() {
+      const password = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm').value;
+
+      if (password !== confirm) {
+        document.getElementById('confirm').setCustomValidity("Passwords do not match.");
+        return false;
+      } else {
+        document.getElementById('confirm').setCustomValidity(""); // clear any previous error
+      }
+
+      alert("Changes saved");
+      return true;
+    }
+  </script>
+
 </body>
 </html>
-
-
